@@ -23,12 +23,8 @@ public class TouristicAttractionController {
 	@Autowired
 	private TouristicAttractionRepository touristicAttractionService;
 	
-	public TouristicAttractionController(TouristicAttractionRepository touristicAttractionService) {
-		this.touristicAttractionService = touristicAttractionService;
-	}
-
 	//Create TouristicAttraction object
-	@PostMapping("/touristic_attractions")
+	@PostMapping("/touristicAttractions")
 	public TouristicAttraction createTouristicAttraction(@RequestBody TouristicAttraction touristicAttraction) {
 		touristicAttraction.setId(0);
 		TouristicAttraction theCity = touristicAttractionService.save(touristicAttraction);
@@ -37,7 +33,7 @@ public class TouristicAttractionController {
 	}
 	
 	//Read: single TouristicAttraction by Id
-	@GetMapping("/touristic_attractions/{id}")
+	@GetMapping("/touristicAttractions/{id}")
 	public TouristicAttraction findTouristicAttractionById(@PathVariable int id) {
 		Optional<TouristicAttraction> theTouristicAttraction = touristicAttractionService.findById(id);
 		
@@ -49,13 +45,13 @@ public class TouristicAttractionController {
 	}
 
 	//Read: list all TouristicAttractions
-	@GetMapping("/touristic_attractions")
+	@GetMapping("/touristicAttractions")
 	public List<TouristicAttraction> findAllTouristicAttractions() {
 		return touristicAttractionService.findAll();
 	}
 
 	//Read: list data of country associated to touristic attraction
-	@GetMapping("/touristic_attractions/{id}/country")
+	@GetMapping("/touristicAttractions/{id}/country")
 	public Country findCountryData(@PathVariable int id) {
 		Optional<TouristicAttraction> theTouristicAttraction = touristicAttractionService.findById(id);
 		
@@ -67,7 +63,7 @@ public class TouristicAttractionController {
 	}
 	
 	//Update TouristicAttraction
-	@PutMapping("/touristic_attractions")
+	@PutMapping("/touristicAttractions")
 	public void updateCiudad(@RequestBody TouristicAttraction touristicAttraction) {
 		if (touristicAttraction.getId()!=null) {
 			touristicAttractionService.save(touristicAttraction);			
@@ -77,7 +73,7 @@ public class TouristicAttractionController {
 	}
 	
 	//Delete Country by id
-	@DeleteMapping("/touristic_attractions/{id}")
+	@DeleteMapping("/touristicAttractions/{id}")
 	public String deleteCity(@PathVariable int id) {
 		Optional<TouristicAttraction> theTouristicAttractionService = touristicAttractionService.findById(id);
 		
