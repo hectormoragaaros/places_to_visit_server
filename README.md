@@ -14,6 +14,7 @@ Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado s
 - Eclipse IDE for Enterprise Java and Web Developers. Version: 2022-09 (4.25.0)
 - Java 8
 - SpringBoot 2.7.4
+- HateOAS
 - Apache Tomcat 9.0.65
 - JPA
 - MariaDb 3.0.8
@@ -35,13 +36,13 @@ Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado s
   Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, referirse al siguiente enlace:
   "Aqui va el enlace de stackoverflow".
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API:
-http://localhost:8080/swagger-ui/index.html
+http://localhost:8080/placestovisit/swagger-ui/index.html
 
   ## Ejemplos JSON de uso del Servicio REST
 
   1. Agregar un país:
-    - Método HTTP: POST.
-    - URL: 
+    - Método HTTP: POST
+    - URL: http://localhost:8080/placestovisit/countries/
     - JSON Body:
     ```json
   {
@@ -63,7 +64,7 @@ http://localhost:8080/swagger-ui/index.html
 
   2. Obtener los datos de un país:
     - Método HTTP: GET
-    - URL: http://localhost:8080/placestovisit/api/countries/{country_id}. Por ejemplo, {country_id}=1
+    - URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
     - JSON Response:
     ```json
   {
@@ -99,7 +100,7 @@ http://localhost:8080/swagger-ui/index.html
 
   3. Obtener todo el listado de países:
     - Método HTTP: GET
-    - URL: http://localhost:8080/placestovisit/api/countries
+    - URL: http://localhost:8080/placestovisit/countries
     - JSON Response:
     ```json
   [
@@ -128,8 +129,8 @@ http://localhost:8080/swagger-ui/index.html
     ```
 
   4. Agregar una atracción turística:
-    - Método HTTP: POST.
-    - URL: http://localhost:8080/api/touristic_attractions/
+    - Método HTTP: POST
+    - URL: http://localhost:8080/placestovisit/touristicAttractions/
     - JSON BODY:
     ```json
   {
@@ -163,70 +164,96 @@ http://localhost:8080/swagger-ui/index.html
     ```
 
   5. Obtener los datos de una atracción turística:
-    - Método HTTP: GET.
-    - URL: http://localhost:8080/touristic_attractions/{attraction_id}. Por ejemplo {attraction_id}=1
+    - Método HTTP: GET
+    - URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
     - JSON Response:
     ```json
   {
-    "id": 1,
-    "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
-    "ubicacion": {
-        "type": "Point",
-        "coordinates": [
-            -51.0406792,
-            -72.98436811
-        ]
+    "nombre" : "ISLA DE PASCUA",
+    "ubicacion" : {
+      "type" : "Point",
+      "coordinates" : [ -27.119404, -109.354704 ]
+    },
+    "_links" : {
+      "self" : {
+        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
+      },
+      "touristicAttraction" : {
+        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
+      },
+      "country" : {
+        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2/country"
+      }
     }
   }
     ```
 
   6. Listar todas las atracciones turísticas:
     - Método HTTP: GET.
-    - URL: http://localhost:8080/touristic_attractions
+    - URL: http://localhost:8080/placestovisit/touristicAttractions
     - JSON Response:
     ```json
-  [
-    {
-        "id": 1,
-        "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
-        "ubicacion": {
-            "type": "Point",
-            "coordinates": [
-                -51.0406792,
-                -72.98436811
-            ]
+  {
+    "_embedded" : {
+      "touristicAttractions" : [ {
+        "nombre" : "PARQUE NACIONAL TORRES DEL PAINE",
+        "ubicacion" : {
+          "type" : "Point",
+          "coordinates" : [ -51.0406792, -72.98436811 ]
+        },
+        "_links" : {
+          "self" : {
+            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+          },
+          "touristicAttraction" : {
+            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+          },
+          "country" : {
+            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1/country"
+          }
         }
+      },
+      ...
+      ]
     },
-    ...
-  ]
+    "_links" : {
+      "self" : {
+        "href" : "http://localhost:8080/placestovisit/touristicAttractions/"
+      },
+      "profile" : {
+        "href" : "http://localhost:8080/placestovisit/profile/touristicAttractions"
+      }
+    },
+    "page" : {
+      "size" : 20,
+      "totalElements" : 3,
+      "totalPages" : 1,
+      "number" : 0
+    }
+  }    
     ```
 
   7. Obtener datos del país de una atracción turística:
     - Método HTTP: GET.
-    - URL: http://localhost:8080/touristic_attractions/{attraction_id}/country.Por ejemplo {attraction_id}=2
+    - URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
     - JSON Response:
     ```json
   {
-    "id": 1,
-    "nombre": "CHILE",
-    "alpha2Code": "CL",
-    "alpha3Code": "CHL",
-    "touristicAttractions": [
-        {
-            "id": 1,
-            "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
-            "ubicacion": {
-                "type": "Point",
-                "coordinates": [
-                    -51.0406792,
-                    -72.98436811
-                ]
-            }
-        },
-        ...
-    ]
-  }    
-    ```
+    "nombre" : "ICELAND",
+    "alpha2Code" : "IS",
+    "alpha3Code" : "ISL",
+    "_links" : {
+      "self" : {
+        "href" : "http://localhost:8080/placestovisit/countries/2"
+      },
+      "country" : {
+        "href" : "http://localhost:8080/placestovisit/countries/2"
+      },
+      "touristicAttractions" : {
+        "href" : "http://localhost:8080/placestovisit/countries/2/touristicAttractions"
+      }
+    }
+  }    ```
 
   ## Referencias
 

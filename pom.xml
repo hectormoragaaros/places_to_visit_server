@@ -10,8 +10,9 @@
 	<groupId>org.hectormoraga</groupId>
 	<artifactId>placestovisit</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>placestovisit</name>
+	<name>placestovisit-server</name>
 	<description>Demo Lugares por visitar</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,6 +38,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-hateoas</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
