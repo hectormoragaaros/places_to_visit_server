@@ -260,7 +260,7 @@ http://localhost:8080/placestovisit/swagger-ui/index.html
 
   ## Referencias
 
-  + Lista de países y sus códigos ISO3166. [\[1\]](https://www.iban.com/country-codes) 
+  1. <a id="ref1" href="https://www.iban.com/country-codes">Lista de países y sus códigos ISO3166.</a> 
   + [2](https://developers.google.com/public-data/docs/canonical/countries_csv) Lista de paises y sus coordenadas del centroide.
   + [3](https://www.baeldung.com/spring-rest-openapi-documentation) Spring REST OpenApi 3.0.
   + [4](https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to) Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional.
