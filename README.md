@@ -4,10 +4,12 @@ Este proyecto fue realizado como un desafío personal para aplicar algunas de la
 
 ## Objetivo
 
-Mostrar en un mapa (google maps u open street map) lugares de interés turístico que me gustaría visitar alguna vez. La idea es elegir el país, y me marcará el o los atractivos turísticos que hay ahí (solo los que me gustaría visitar). 
+Mostrar en un mapa (google maps u open street map) lugares de interés turístico que me gustaría visitar alguna vez. La idea es elegir el país, y me marcará el o los atractivos turísticos que hay ahí (solo los que me gustaría visitar).
+La parte del servidor consistió en crear un servicio REST que me expusiera un CRUD por HTTP para países y atracciones turísticas asociadas a esos países. Lo especial de este servicio RESTful (cumple HATEOAS [8](#que-es-HATEOAS)) y que, mediante Swagger, se puede hacer su documentación automáticamente.
 
 ### Nota
 Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado spring-security para limitar los REST expuestos. Ni se ha realizado una restriccion de acceso al proyecto cliente.
+Uno de los temas que me costó bastante resolver es cómo exponer el ID de los objetos de las tablas __country__ y __touristic\_attraction__, ya que por defecto los ID (las claves primarias de la tablas) no se exponen.
 
 ## Tecnologías Usadas
 
@@ -26,7 +28,7 @@ Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado s
 ## Descripción del proyecto
 
 1) El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
-2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). La tabla **touristAttraction** con su nombre (en inglés), que tendrá su nombre (en inglés), y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
+2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). La tabla **touristic\_attraction** con su nombre (en inglés), que tendrá su nombre (en inglés), y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
 3) Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
   + jackson-core (v2.13.4)
   + jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
@@ -37,6 +39,7 @@ Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado s
   "Aqui va el enlace de stackoverflow".
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API:
 http://localhost:8080/placestovisit/swagger-ui/index.html
+5) Para exponer los id de las tablas country y touristic\_attractions, ver referencias [6] y [7].
 
   ## Ejemplos JSON de uso del Servicio REST
 
@@ -257,8 +260,11 @@ http://localhost:8080/placestovisit/swagger-ui/index.html
 
   ## Referencias
 
-  - Lista de países y sus códigos ISO3166: https://www.iban.com/country-codes
-  - Lista de paises y sus coordenadas del centroide: https://developers.google.com/public-data/docs/canonical/countries_csv
-  - Spring REST OpenApi 3.0: https://www.baeldung.com/spring-rest-openapi-documentation
-  - Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional: https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to
-  - ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?: https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b
+  [1] Lista de países y sus códigos ISO3166: https://www.iban.com/country-codes
+  [2] Lista de paises y sus coordenadas del centroide: https://developers.google.com/public-data/docs/canonical/countries_csv
+  [3] Spring REST OpenApi 3.0: https://www.baeldung.com/spring-rest-openapi-documentation
+  [4] Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional: https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to
+  [5] ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?: https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b
+  [6] How to present resource id to client?: https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client
+  [7] Spring Data Rest – Serializing the Entity ID: https://www.baeldung.com/spring-data-rest-serialize-entity-id
+  [8] Qué es HATEOAS y cuál es su fincióm en las API Rest https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/

@@ -13,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "country")
 public class Country {
@@ -26,13 +28,15 @@ public class Country {
 	private String alpha2Code;
 	@Column(name = "alpha3code", nullable = false)
 	private String alpha3Code;
+	@JsonManagedReference
 	@OneToMany(mappedBy = "country",
 			fetch = FetchType.LAZY, 
 			orphanRemoval = true,
 			cascade = CascadeType.ALL)
 	private List<TouristicAttraction> touristicAttractions = new ArrayList<>();
 
-	public Country(String nombre, String alpha2Code, String alpha3Code) {
+	public Country(Integer id, String nombre, String alpha2Code, String alpha3Code) {
+		this.id = id;
 		this.nombre = nombre;
 		this.alpha2Code = alpha2Code;
 		this.alpha3Code = alpha3Code;
