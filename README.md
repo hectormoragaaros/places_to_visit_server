@@ -28,15 +28,14 @@ Uno de los temas que me costó bastante resolver es cómo exponer el ID de los o
 ## Descripción del proyecto
 
 1) El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
-2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). La tabla **touristic\_attraction** con su nombre (en inglés), que tendrá su nombre (en inglés), y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
+2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). La tabla **touristic\_attraction** con el nombre de la atracción turística en inglés y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
 3) Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
   + jackson-core (v2.13.4)
   + jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
   + jts-core (v1.19.0, groupId: org.locationtech.jts)
   + hibernate-spatial (v5.6.11.Final)
 
-  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, referirse al siguiente enlace:
-  "Aqui va el enlace de stackoverflow".
+  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en #[ref9].
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API:
 http://localhost:8080/placestovisit/swagger-ui/index.html
 5) Para exponer los id de las tablas country y touristic\_attractions, ver referencias 6 #[ref6] y 7 #[ref7].
@@ -268,3 +267,4 @@ http://localhost:8080/placestovisit/swagger-ui/index.html
   6. <a id="ref6" href="https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client">How to present resource id to client?</a>
   7. <a id="ref7" href="https://www.baeldung.com/spring-data-rest-serialize-entity-id">Spring Data Rest – Serializing the Entity ID.</a>
   8. <a id="ref8" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
+  9. <a id="ref9" href="https://stackoverflow.com/questions/45713934/jackson-deserialize-geojson-point-in-spring-boot">Jackson deserialize GeoJson Point in Spring Boot.</a>
