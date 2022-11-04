@@ -35,10 +35,10 @@ Uno de los temas que me costó bastante resolver es cómo exponer el ID de los o
   + jts-core (v1.19.0, groupId: org.locationtech.jts)
   + hibernate-spatial (v5.6.11.Final)
 
-  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en #[ref9].
+  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[9\]]#[ref9].
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API:
 http://localhost:8080/placestovisit/swagger-ui/index.html
-5) Para exponer los id de las tablas country y touristic\_attractions, ver referencias 6 #[ref6] y 7 #[ref7].
+5) Para exponer los id de las tablas country y touristic\_attractions, ver [\[6\]](#ref6) y [\[7\]](#ref7).
 
   ## Ejemplos JSON de uso del Servicio REST
 
