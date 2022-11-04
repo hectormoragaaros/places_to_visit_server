@@ -3,7 +3,6 @@ package org.hectormoraga.placestovisit.resources;
 import java.util.List;
 import java.util.Optional;
 
-import org.hectormoraga.placestovisit.entity.Country;
 import org.hectormoraga.placestovisit.entity.TouristicAttraction;
 import org.hectormoraga.placestovisit.repository.TouristicAttractionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,18 +49,6 @@ public class TouristicAttractionController {
 		return touristicAttractionService.findAll();
 	}
 
-	//Read: list data of country associated to touristic attraction
-	@GetMapping("/touristicAttractions/{id}/country")
-	public Country findCountryData(@PathVariable int id) {
-		Optional<TouristicAttraction> theTouristicAttraction = touristicAttractionService.findById(id);
-		
-		if (!theTouristicAttraction.isPresent()) {
-			throw new RuntimeException("Atracción Turística no existe, id - " + id);
-		}
-
-		return theTouristicAttraction.get().getCountry();
-	}
-	
 	//Update TouristicAttraction
 	@PutMapping("/touristicAttractions")
 	public void updateCiudad(@RequestBody TouristicAttraction touristicAttraction) {
