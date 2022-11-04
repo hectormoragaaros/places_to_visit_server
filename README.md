@@ -39,7 +39,7 @@ Uno de los temas que me costó bastante resolver es cómo exponer el ID de los o
   "Aqui va el enlace de stackoverflow".
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API:
 http://localhost:8080/placestovisit/swagger-ui/index.html
-5) Para exponer los id de las tablas country y touristic\_attractions, ver referencias [6] y [7].
+5) Para exponer los id de las tablas country y touristic\_attractions, ver referencias 6 #[ref6] y 7 #[ref7].
 
   ## Ejemplos JSON de uso del Servicio REST
 
@@ -260,11 +260,11 @@ http://localhost:8080/placestovisit/swagger-ui/index.html
 
   ## Referencias
 
-  [1] Lista de países y sus códigos ISO3166: https://www.iban.com/country-codes
-  [2] Lista de paises y sus coordenadas del centroide: https://developers.google.com/public-data/docs/canonical/countries_csv
-  [3] Spring REST OpenApi 3.0: https://www.baeldung.com/spring-rest-openapi-documentation
-  [4] Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional: https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to
-  [5] ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?: https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b
+  [1](#https://www.iban.com/country-codes) Lista de países y sus códigos ISO3166. 
+  [2](#https://developers.google.com/public-data/docs/canonical/countries_csv) Lista de paises y sus coordenadas del centroide.
+  [3](#https://www.baeldung.com/spring-rest-openapi-documentation) Spring REST OpenApi 3.0.
+  [4](#https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to) Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional.
+  [5](# https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b) ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?
   [6] How to present resource id to client?: https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client
   [7] Spring Data Rest – Serializing the Entity ID: https://www.baeldung.com/spring-data-rest-serialize-entity-id
-  [8] Qué es HATEOAS y cuál es su fincióm en las API Rest https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/
+  [8] Qué es HATEOAS y cuál es su función en las API Rest (https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/)
