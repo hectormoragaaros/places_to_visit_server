@@ -5,7 +5,7 @@ Este proyecto fue realizado como un desafío personal para aplicar algunas de la
 ## Objetivo
 
 Mostrar en un mapa (google maps u open street map) lugares de interés turístico que me gustaría visitar alguna vez. La idea es elegir el país, y me marcará el o los atractivos turísticos que hay ahí (solo los que me gustaría visitar).
-La parte del servidor consistió en crear un servicio REST que me expusiera un CRUD por HTTP para países y atracciones turísticas asociadas a esos países. Lo especial de este servicio RESTful (cumple HATEOAS [8](#que-es-HATEOAS)) y que, mediante Swagger, se puede hacer su documentación automáticamente.
+La parte del servidor consistió en crear un servicio REST que me expusiera un CRUD por HTTP para países y atracciones turísticas asociadas a esos países. Lo especial de este servicio RESTful (cumple HATEOAS [\[8\]](#ref8)) y que, mediante Swagger[\[3\]](#ref3), se puede hacer su documentación automáticamente.
 
 ### Nota
 Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado spring-security para limitar los REST expuestos. Ni se ha realizado una restriccion de acceso al proyecto cliente.
