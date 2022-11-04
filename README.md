@@ -260,11 +260,11 @@ http://localhost:8080/placestovisit/swagger-ui/index.html
 
   ## Referencias
 
-  [1](https://www.iban.com/country-codes) Lista de países y sus códigos ISO3166. 
-  [2](https://developers.google.com/public-data/docs/canonical/countries_csv) Lista de paises y sus coordenadas del centroide.
-  [3](https://www.baeldung.com/spring-rest-openapi-documentation) Spring REST OpenApi 3.0.
-  [4](https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to) Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional.
-  [5](https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b) ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?
-  [6](https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client) How to present resource id to client?
-  [7](https://www.baeldung.com/spring-data-rest-serialize-entity-id) Spring Data Rest – Serializing the Entity ID.
-  [8](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/) Qué es HATEOAS y cuál es su función en las API Rest.
+  + [1](https://www.iban.com/country-codes) Lista de países y sus códigos ISO3166. 
+  + [2](https://developers.google.com/public-data/docs/canonical/countries_csv) Lista de paises y sus coordenadas del centroide.
+  + [3](https://www.baeldung.com/spring-rest-openapi-documentation) Spring REST OpenApi 3.0.
+  + [4](https://stackoverflow.com/questions/70829392/spring-jpa-how-to-display-the-jsonignored-field-on-the-inverse-side-in-a-one-to) Spring JPA How to Display the JsonIgnored field on the inverse side in a One-To-Many Bidirectional.
+  + [5](https://es.stackoverflow.com/questions/374212/como-solucionar-error-no-serializer-found-for-class-org-hibernate-proxy-pojo-b) ¿Como solucionar error "No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor"?
+  + [6](https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client) How to present resource id to client?
+  + [7](https://www.baeldung.com/spring-data-rest-serialize-entity-id) Spring Data Rest – Serializing the Entity ID.
+  + [8](https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/) Qué es HATEOAS y cuál es su función en las API Rest.
