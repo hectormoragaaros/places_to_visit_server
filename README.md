@@ -54,7 +54,6 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
   }
     ```
     + JSON Response:
-    <code>
     ```json
   {
     "id": 18,
@@ -64,13 +63,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     "touristicAttractions":[]
   }    
     ```
-    </code>
-
-  2. Obtener los datos de un país:
-     + Método HTTP: GET
-     + URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
-     + JSON Response:
-    <code>
+2. Obtener los datos de un país:
+    + Método HTTP: GET
+    + URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
+    + JSON Response:
     ```json
   {
     "nombre": "CHILE",
@@ -102,13 +98,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     ]
   }    
     ```
-    </code>
-
-  3. Obtener todo el listado de países:
-     + Método HTTP: GET
-     + URL: http://localhost:8080/placestovisit/countries
-     + JSON Response:
-    <code>
+3. Obtener todo el listado de países:
+    + Método HTTP: GET
+    + URL: http://localhost:8080/placestovisit/countries
+    + JSON Response:
     ```json
   [
     {
@@ -134,12 +127,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     ...
   ]
     ```
-    </code>
-
-  4. Agregar una atracción turística:
-     + Método HTTP: POST
-     + URL: http://localhost:8080/placestovisit/touristicAttractions/
-     + JSON BODY:
+4. Agregar una atracción turística:
+    + Método HTTP: POST
+    + URL: http://localhost:8080/placestovisit/touristicAttractions/
+    + JSON BODY:
     ```json
   {
     {
@@ -156,7 +147,7 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     }
   }
     ```
-    - JSON Response:
+    + JSON Response:
     ```json
   {
     "id": 3,
@@ -170,11 +161,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     }
   }
     ```
-
-  5. Obtener los datos de una atracción turística:
-     + Método HTTP: GET
-     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
-     + JSON Response:
+5. Obtener los datos de una atracción turística:
+    + Método HTTP: GET
+    + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
+    + JSON Response:
     ```json
   {
     "nombre" : "ISLA DE PASCUA",
@@ -195,11 +185,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     }
   }
     ```
-
-  6. Listar todas las atracciones turísticas:
-     + Método HTTP: GET.
-     + URL: http://localhost:8080/placestovisit/touristicAttractions
-     + JSON Response:
+6. Listar todas las atracciones turísticas:
+    + Método HTTP: GET
+    + URL: http://localhost:8080/placestovisit/touristicAttractions
+    + JSON Response:
     ```json
   {
     "_embedded" : {
@@ -240,11 +229,10 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     }
   }    
     ```
-
-  7. Obtener datos del país de una atracción turística:
-     + Método HTTP: GET.
-     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
-     + JSON Response:
+7. Obtener datos del país de una atracción turística:
+    + Método HTTP: GET
+    + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
+    + JSON Response:
     ```json
   {
     "nombre" : "ICELAND",
@@ -263,8 +251,7 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     }
   }    ```
 
-  ## Referencias
-
+## Referencias
   1. <a id="ref1" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
   2. <a id="ref2" href="https://www.baeldung.com/spring-rest-openapi-documentation">Spring REST OpenApi 3.0.</a>
   3. <a id="ref3" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
