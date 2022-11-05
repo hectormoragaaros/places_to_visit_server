@@ -104,7 +104,7 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
         }    
         ```
 
-  3. Obtener todo el listado de países:
+3. Obtener todo el listado de países:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/countries
     + JSON Response:
