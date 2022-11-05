@@ -110,29 +110,43 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     + JSON Response:
 
         ```json
-        [
-          {
-            "id": 1,
-            "nombre": "CHILE",
-            "alpha2Code": "CL",
-            "alpha3Code": "CHL",
-            "touristicAttractions": [
-            {
-                "id": 1,
-                "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
-                "ubicacion": {
-                    "type": "Point",
-                    "coordinates": [
-                        -51.0406792,
-                        -72.98436811
-                    ]
+        {
+          "_embedded" : {
+            "countries" : [ {
+              "id" : 1,
+              "nombre" : "CHILE",
+              "alpha2Code" : "CL",
+              "alpha3Code" : "CHL",
+              "_links" : {
+                "self" : {
+                  "href" : "http://localhost:8080/placestovisit/countries/1"
+                },
+                "country" : {
+                  "href" : "http://localhost:8080/placestovisit/countries/1"
+                },
+                "touristicAttractions" : {
+                  "href" : "http://localhost:8080/placestovisit/countries/1/touristicAttractions"
                 }
+              }
             },
             ...
             ]
           },
-          ...
-        ]
+          "_links" : {
+            "self" : {
+              "href" : "http://localhost:8080/placestovisit/countries"
+            },
+            "profile" : {
+              "href" : "http://localhost:8080/placestovisit/profile/countries"
+            }
+          },
+          "page" : {
+            "size" : 20,
+            "totalElements" : 18,
+            "totalPages" : 1,
+            "number" : 0
+          }
+        }
         ```
 
 4. Agregar una atracción turística:
