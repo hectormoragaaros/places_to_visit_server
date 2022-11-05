@@ -28,24 +28,24 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
 
 ## Descripción del proyecto
 
-	1) El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
-	2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). Esta tabla fue obtenida de los datos publicados por [\[4\]](#ref4) y [\[5\]](#ref5). La tabla **touristic_attraction** con el nombre de la atracción turística en inglés y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
-	3) Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
-  		+ jackson-core (v2.13.4)
-  		+ jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
-  		+ jts-core (v1.19.0, groupId: org.locationtech.jts)
-  		+ hibernate-spatial (v5.6.11.Final)
-  	  <p>Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[6\]](#ref6).</p>
-	4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API, al ejecutar ek proyecto, seguir la dirección http://localhost:8080/placestovisit/swagger-ui/index.html
-	5) Para exponer los id de las tablas country y touristic\_attractions, ver [\[7\]](#ref7) y [\[8\]](#ref8).
+1. El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
+2. A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). Esta tabla fue obtenida de los datos publicados por [\[4\]](#ref4) y [\[5\]](#ref5). La tabla **touristic_attraction** con el nombre de la atracción turística en inglés y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
+3. Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
+    + jackson-core (v2.13.4)
+    + jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
+    + jts-core (v1.19.0, groupId: org.locationtech.jts)
+    + hibernate-spatial (v5.6.11.Final)
 
-  ## Ejemplos JSON de uso del Servicio REST
+   Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[6\]](#ref6).</p>
+4. Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API, al ejecutar ek proyecto, seguir la dirección http://localhost:8080/placestovisit/swagger-ui/index.html
+5. Para exponer los id de las tablas country y touristic\_attractions, ver [\[7\]](#ref7) y [\[8\]](#ref8).
 
-  1. Agregar un país:
-     + Método HTTP: POST
-     + URL: http://localhost:8080/placestovisit/countries/
-     + JSON Body:
-    <code>
+## Ejemplos JSON de uso del Servicio REST
+
+1. Agregar un país:
+    + Método HTTP: POST
+    + URL: http://localhost:8080/placestovisit/countries/
+    + JSON Body:
     ```json
   {
     "nombre": "MEXICO",
@@ -53,8 +53,7 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     "alpha3Code": "MEX"
   }
     ```
-    </code>
-     + JSON Response:
+    + JSON Response:
     <code>
     ```json
   {
