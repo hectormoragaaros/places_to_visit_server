@@ -10,7 +10,7 @@ La parte del servidor consistió en crear un servicio REST que me expusiera un C
 ### Nota
 Este ejemplo tiene muchas cosas que corregir, por ejemplo no se le ha agregado spring-security para limitar los REST expuestos. Ni se ha realizado una restriccion de acceso al proyecto cliente.
 Uno de los temas que me costó bastante resolver es cómo exponer el ID de los objetos de las tablas __country__ y __touristic\_attraction__, ya que por defecto los ID (las claves primarias de la tablas) no se exponen.
-El otro tema importante es evitar la recursión infinita cuando hay relaciones bidireccionales. Mirar [\[4\]](#ref4).
+El otro tema importante es evitar la recursión infinita cuando hay relaciones bidireccionales [\[3\]](#ref3).
 
 ## Tecnologías Usadas
 
@@ -29,16 +29,16 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
 ## Descripción del proyecto
 
 1) El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
-2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). Esta tabla fue obtenida de los datos publicados por [\[1\]](#ref1) y [\[2\]](#ref2).
+2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). Esta tabla fue obtenida de los datos publicados por [\[4\]](#ref4) y [\[5\]](#ref5).
 La tabla **touristic\_attraction** con el nombre de la atracción turística en inglés y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
 3) Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
   + jackson-core (v2.13.4)
   + jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
   + jts-core (v1.19.0, groupId: org.locationtech.jts)
   + hibernate-spatial (v5.6.11.Final)
-  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[8\]](#ref8).
+  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[6\]](#ref6).
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API, al ejecutar ek proyecto, seguir la dirección http://localhost:8080/placestovisit/swagger-ui/index.html
-5) Para exponer los id de las tablas country y touristic\_attractions, ver [\[5\]](#ref5) y [\[6\]](#ref6).
+5) Para exponer los id de las tablas country y touristic\_attractions, ver [\[7\]](#ref7) y [\[8\]](#ref8).
 
   ## Ejemplos JSON de uso del Servicio REST
 
@@ -261,9 +261,10 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
 
   1. <a id="ref1" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
   2. <a id="ref2" href="https://www.baeldung.com/spring-rest-openapi-documentation">Spring REST OpenApi 3.0.</a>
-  3. <a id="ref3" href="https://www.iban.com/country-codes">Lista de países y sus códigos ISO3166.</a> 
-  4. <a id="ref4" href="https://developers.google.com/public-data/docs/canonical/countries_csv">Lista de paises y sus coordenadas del centroide.</a>
-  5. <a id="ref5" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
-  6. <a id="ref6" href="https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client">How to present resource id to client?</a>
-  7. <a id="ref7" href="https://www.baeldung.com/spring-data-rest-serialize-entity-id">Spring Data Rest – Serializing the Entity ID.</a>
-  8. <a id="ref8" href="https://stackoverflow.com/questions/45713934/jackson-deserialize-geojson-point-in-spring-boot">Jackson deserialize GeoJson Point in Spring Boot.</a>
+  3. <a id="ref3" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
+  4. <a id="ref4" href="https://www.iban.com/country-codes">Lista de países y sus códigos ISO3166.</a> 
+  5. <a id="ref5" href="https://developers.google.com/public-data/docs/canonical/countries_csv">Lista de paises y sus coordenadas del centroide.</a>
+  6. <a id="ref6" href="https://stackoverflow.com/questions/45713934/jackson-deserialize-geojson-point-in-spring-boot">Jackson deserialize GeoJson Point in Spring Boot.</a>
+  7. <a id="ref7" href="https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client">How to present resource id to client?</a>
+  8. <a id="ref8" href="https://www.baeldung.com/spring-data-rest-serialize-entity-id">Spring Data Rest – Serializing the Entity ID.</a>
+  
