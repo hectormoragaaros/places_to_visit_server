@@ -46,6 +46,7 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     - Método HTTP: POST
     - URL: http://localhost:8080/placestovisit/countries/
     - JSON Body:
+    <code>
     ```json
   {
     "nombre": "MEXICO",
@@ -53,7 +54,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     "alpha3Code": "MEX"
   }
     ```
+    </code>
     - JSON Response:
+    <code>
     ```json
   {
     "id": 18,
@@ -63,11 +66,13 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     "touristicAttractions":[]
   }    
     ```
+    </code>
 
   2. Obtener los datos de un país:
     - Método HTTP: GET
     - URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
     - JSON Response:
+    <code>
     ```json
   {
     "nombre": "CHILE",
@@ -99,11 +104,13 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     ]
   }    
     ```
+    </code>
 
   3. Obtener todo el listado de países:
     - Método HTTP: GET
     - URL: http://localhost:8080/placestovisit/countries
     - JSON Response:
+    <code>
     ```json
   [
     {
@@ -129,6 +136,7 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     ...
   ]
     ```
+    </code>
 
   4. Agregar una atracción turística:
     - Método HTTP: POST
