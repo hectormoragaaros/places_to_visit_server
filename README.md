@@ -36,16 +36,16 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
   + jackson-datatype-jts (v1.2.10, groupId: org.n52.jackson)
   + jts-core (v1.19.0, groupId: org.locationtech.jts)
   + hibernate-spatial (v5.6.11.Final)
-  Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[6\]](#ref6).
+  <p>Para resolver los diferentes problemas que tuve para enganchar REST con los datos geográficos, de acuerdo a lo que establecen en [\[6\]](#ref6).</p>
 4) Para documentar los servicios REST expuestos se utilizó  Spring REST Open API 3.0. Para revisar la documentacion de esta API, al ejecutar ek proyecto, seguir la dirección http://localhost:8080/placestovisit/swagger-ui/index.html
 5) Para exponer los id de las tablas country y touristic\_attractions, ver [\[7\]](#ref7) y [\[8\]](#ref8).
 
   ## Ejemplos JSON de uso del Servicio REST
 
   1. Agregar un país:
-    - Método HTTP: POST
-    - URL: http://localhost:8080/placestovisit/countries/
-    - JSON Body:
+     + Método HTTP: POST
+     + URL: http://localhost:8080/placestovisit/countries/
+     + JSON Body:
     <code>
     ```json
   {
@@ -55,7 +55,7 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
   }
     ```
     </code>
-    - JSON Response:
+     + JSON Response:
     <code>
     ```json
   {
@@ -69,9 +69,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     </code>
 
   2. Obtener los datos de un país:
-    - Método HTTP: GET
-    - URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
-    - JSON Response:
+     + Método HTTP: GET
+     + URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
+     + JSON Response:
     <code>
     ```json
   {
@@ -107,9 +107,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     </code>
 
   3. Obtener todo el listado de países:
-    - Método HTTP: GET
-    - URL: http://localhost:8080/placestovisit/countries
-    - JSON Response:
+     + Método HTTP: GET
+     + URL: http://localhost:8080/placestovisit/countries
+     + JSON Response:
     <code>
     ```json
   [
@@ -139,9 +139,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     </code>
 
   4. Agregar una atracción turística:
-    - Método HTTP: POST
-    - URL: http://localhost:8080/placestovisit/touristicAttractions/
-    - JSON BODY:
+     + Método HTTP: POST
+     + URL: http://localhost:8080/placestovisit/touristicAttractions/
+     + JSON BODY:
     ```json
   {
     {
@@ -174,9 +174,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     ```
 
   5. Obtener los datos de una atracción turística:
-    - Método HTTP: GET
-    - URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
-    - JSON Response:
+     + Método HTTP: GET
+     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
+     + JSON Response:
     ```json
   {
     "nombre" : "ISLA DE PASCUA",
@@ -199,9 +199,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     ```
 
   6. Listar todas las atracciones turísticas:
-    - Método HTTP: GET.
-    - URL: http://localhost:8080/placestovisit/touristicAttractions
-    - JSON Response:
+     + Método HTTP: GET.
+     + URL: http://localhost:8080/placestovisit/touristicAttractions
+     + JSON Response:
     ```json
   {
     "_embedded" : {
@@ -244,9 +244,9 @@ La tabla **touristic\_attraction** con el nombre de la atracción turística en 
     ```
 
   7. Obtener datos del país de una atracción turística:
-    - Método HTTP: GET.
-    - URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
-    - JSON Response:
+     + Método HTTP: GET.
+     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
+     + JSON Response:
     ```json
   {
     "nombre" : "ICELAND",
