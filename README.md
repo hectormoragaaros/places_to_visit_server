@@ -29,7 +29,6 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
 ## Descripción del proyecto
 
 1) El proyecto está dividido en 2 partes: un servidor REST que acepta peticiones CRUD (Create, Read, Update y Delete) para países y atractivos turísticos.
-<<<<<<< HEAD
 2) A nivel de base de datos tenemos la tabla **country** con su nombre (en inglés), los códigos de 2 y 3 letras (de acuerdo a la ISO3166). Esta tabla fue obtenida de los datos publicados por [\[4\]](#ref4) y [\[5\]](#ref5).
 La tabla **touristic\_attraction** con el nombre de la atracción turística en inglés y la ubicación geográfica. Internamente esta columna ubicacion tiene como tipo de datos un POINT.
 3) Para poder trabajar con JSON con datos geográficos se tuvo que agregar las siguientes dependencias:
