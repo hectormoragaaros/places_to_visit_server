@@ -46,34 +46,39 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
     + Método HTTP: POST
     + URL: http://localhost:8080/placestovisit/countries/
     + JSON Body:
-    ```json
-  {
-    "nombre": "MEXICO",
-    "alpha2Code": "MX",
-    "alpha3Code": "MEX"
-  }
-    ```
+
+        ```json
+        {
+          "nombre": "MEXICO",
+          "alpha2Code": "MX",
+          "alpha3Code": "MEX"
+        }
+        ```
+
     + JSON Response:
-    ```json
-  {
-    "id": 18,
-    "nombre": "MEXICO",
-    "alpha2Code": "MX",
-    "alpha3Code": "MEX",
-    "touristicAttractions":[]
-  }    
-    ```
+
+        ```json
+        {
+          "id": 18,
+          "nombre": "MEXICO",
+          "alpha2Code": "MX",
+          "alpha3Code": "MEX",
+          "touristicAttractions":[]
+        }    
+        ```
+
 2. Obtener los datos de un país:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/countries/{country_id}. Por ejemplo, {country_id}=1
     + JSON Response:
-    ```json
-  {
-    "nombre": "CHILE",
-    "alpha2Code": "CL",
-    "alpha3Code": "CHL",
-    "touristicAttractions": [
+
+        ```json
         {
+          "nombre": "CHILE",
+          "alpha2Code": "CL",
+          "alpha3Code": "CHL",
+          "touristicAttractions": [
+          {
             "id": 1,
             "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
             "ubicacion": {
@@ -83,8 +88,8 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
                     -72.98436811
                 ]
             }
-        },
-        {
+          },
+          {
             "id": 2,
             "nombre": "ISLA DE PASCUA",
             "ubicacion": {
@@ -94,22 +99,24 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
                     -109.354704
                 ]
             }
-        }
-    ]
-  }    
-    ```
-3. Obtener todo el listado de países:
+          }
+          ]
+        }    
+        ```
+
+  3. Obtener todo el listado de países:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/countries
     + JSON Response:
-    ```json
-  [
-    {
-        "id": 1,
-        "nombre": "CHILE",
-        "alpha2Code": "CL",
-        "alpha3Code": "CHL",
-        "touristicAttractions": [
+
+        ```json
+        [
+          {
+            "id": 1,
+            "nombre": "CHILE",
+            "alpha2Code": "CL",
+            "alpha3Code": "CHL",
+            "touristicAttractions": [
             {
                 "id": 1,
                 "nombre": "PARQUE NACIONAL TORRES DEL PAINE",
@@ -122,136 +129,152 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
                 }
             },
             ...
+            ]
+          },
+          ...
         ]
-    },
-    ...
-  ]
-    ```
+        ```
+
 4. Agregar una atracción turística:
     + Método HTTP: POST
     + URL: http://localhost:8080/placestovisit/touristicAttractions/
     + JSON BODY:
-    ```json
-  {
-    {
-    "nombre":"ISLA DE PASCUA",
-    "ubicacion":{
-        "type":"Point",
-        "coordinates":[
-            -27.119404,
-            -109.354704
-        ]
-    },
-    "country":{
-        "id":1
-    }
-  }
-    ```
+
+        ```json
+        {
+            "nombre":"ISLA DE PASCUA",
+            "ubicacion":{
+              "type":"Point",
+              "coordinates":[
+                -27.119404,
+                -109.354704
+              ]
+            },
+            "country":{
+              "id":1
+            }
+        }
+        ```
+
     + JSON Response:
-    ```json
-  {
-    "id": 3,
-    "nombre": "ISLA DE PASCUA",
-    "ubicacion": {
-        "type": "Point",
-        "coordinates": [
-            -27.119404,
-            -109.354704
-        ]
-    }
-  }
-    ```
+
+        ```json
+        {
+          "id": 3,
+          "nombre": "ISLA DE PASCUA",
+          "ubicacion": {
+            "type": "Point",
+            "coordinates": [
+              -27.119404,
+              -109.354704
+            ]
+          }
+        }
+        ```
+
 5. Obtener los datos de una atracción turística:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}. Por ejemplo {attraction_id}=1
     + JSON Response:
-    ```json
-  {
-    "nombre" : "ISLA DE PASCUA",
-    "ubicacion" : {
-      "type" : "Point",
-      "coordinates" : [ -27.119404, -109.354704 ]
-    },
-    "_links" : {
-      "self" : {
-        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
-      },
-      "touristicAttraction" : {
-        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
-      },
-      "country" : {
-        "href" : "http://localhost:8080/placestovisit/touristicAttractions/2/country"
-      }
-    }
-  }
-    ```
+
+        ```json
+        {
+          "nombre" : "ISLA DE PASCUA",
+          "ubicacion" : {
+            "type" : "Point",
+            "coordinates" : [
+              -27.119404,
+              -109.354704
+            ]
+          },
+          "_links" : {
+            "self" : {
+              "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
+            },
+            "touristicAttraction" : {
+              "href" : "http://localhost:8080/placestovisit/touristicAttractions/2"
+            },
+            "country" : {
+              "href" : "http://localhost:8080/placestovisit/touristicAttractions/2/country"
+            }
+          }
+        }
+        ```
+
+  <p>Notar que el formato JSON es el correspondiente al HATEOAS.</p>
+
 6. Listar todas las atracciones turísticas:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/touristicAttractions
     + JSON Response:
-    ```json
-  {
-    "_embedded" : {
-      "touristicAttractions" : [ {
-        "nombre" : "PARQUE NACIONAL TORRES DEL PAINE",
-        "ubicacion" : {
-          "type" : "Point",
-          "coordinates" : [ -51.0406792, -72.98436811 ]
-        },
-        "_links" : {
-          "self" : {
-            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+
+        ```json
+        {
+          "_embedded" : {
+            "touristicAttractions" : [ {
+              "nombre" : "PARQUE NACIONAL TORRES DEL PAINE",
+              "ubicacion" : {
+                "type" : "Point",
+                "coordinates" : [ -51.0406792, -72.98436811 ]
+              },
+              "_links" : {
+                "self" : {
+                  "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+                },
+                "touristicAttraction" : {
+                  "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+                },
+                "country" : {
+                  "href" : "http://localhost:8080/placestovisit/touristicAttractions/1/country"
+                }
+              }
+            },
+            ...
+            ]
           },
-          "touristicAttraction" : {
-            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1"
+          "_links" : {
+            "self" : {
+              "href" : "http://localhost:8080/placestovisit/touristicAttractions/"
+            },
+            "profile" : {
+              "href" : "http://localhost:8080/placestovisit/profile/touristicAttractions"
+            }
           },
-          "country" : {
-            "href" : "http://localhost:8080/placestovisit/touristicAttractions/1/country"
+          "page" : {
+            "size" : 20,
+            "totalElements" : 3,
+            "totalPages" : 1,
+            "number" : 0
           }
-        }
-      },
-      ...
-      ]
-    },
-    "_links" : {
-      "self" : {
-        "href" : "http://localhost:8080/placestovisit/touristicAttractions/"
-      },
-      "profile" : {
-        "href" : "http://localhost:8080/placestovisit/profile/touristicAttractions"
-      }
-    },
-    "page" : {
-      "size" : 20,
-      "totalElements" : 3,
-      "totalPages" : 1,
-      "number" : 0
-    }
-  }    
-    ```
+        }    
+        ```
+
 7. Obtener datos del país de una atracción turística:
     + Método HTTP: GET
     + URL: http://localhost:8080/placestovisit/touristicAttractions/{attraction_id}/country. Por ejemplo {attraction_id}=2
     + JSON Response:
-    ```json
-  {
-    "nombre" : "ICELAND",
-    "alpha2Code" : "IS",
-    "alpha3Code" : "ISL",
-    "_links" : {
-      "self" : {
-        "href" : "http://localhost:8080/placestovisit/countries/2"
-      },
-      "country" : {
-        "href" : "http://localhost:8080/placestovisit/countries/2"
-      },
-      "touristicAttractions" : {
-        "href" : "http://localhost:8080/placestovisit/countries/2/touristicAttractions"
-      }
-    }
-  }    ```
+        
+        ```json
+        {
+          "nombre" : "ICELAND",
+          "alpha2Code" : "IS",
+          "alpha3Code" : "ISL",
+          "_links" : {
+            "self" : {
+              "href" : "http://localhost:8080/placestovisit/countries/2"
+            },
+            "country" : {
+              "href" : "http://localhost:8080/placestovisit/countries/2"
+            },
+            "touristicAttractions" : {
+              "href" : "http://localhost:8080/placestovisit/countries/2/touristicAttractions"
+            }
+          }
+        }
+        ```
 
 ## Referencias
+
   1. <a id="ref1" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
   2. <a id="ref2" href="https://www.baeldung.com/spring-rest-openapi-documentation">Spring REST OpenApi 3.0.</a>
   3. <a id="ref3" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
