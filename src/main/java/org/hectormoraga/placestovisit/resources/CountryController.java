@@ -26,9 +26,8 @@ public class CountryController {
 	@PostMapping("/countries")
 	public Country crearCountry(@RequestBody Country country) {
 		country.setId(0);
-		Country theCountry = countryService.save(country);
 		
-		return theCountry;
+		return countryService.save(country);
 	}
 	
 	//Read: single element by Id
@@ -51,9 +50,9 @@ public class CountryController {
 
 	//Update Country
 	@PutMapping("/countries")
-	public void updateCountry(@RequestBody Country Country) {
-		if (Country.getId()!=null) {
-			countryService.save(Country);			
+	public void updateCountry(@RequestBody Country country) {
+		if (country.getId()!=null) {
+			countryService.save(country);	
 		} else {
 			throw new RuntimeException("Ciudad no existe!");
 		}

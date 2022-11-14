@@ -26,9 +26,8 @@ public class TouristicAttractionController {
 	@PostMapping("/touristicAttractions")
 	public TouristicAttraction createTouristicAttraction(@RequestBody TouristicAttraction touristicAttraction) {
 		touristicAttraction.setId(0);
-		TouristicAttraction theCity = touristicAttractionService.save(touristicAttraction);
-		
-		return theCity;
+
+		return touristicAttractionService.save(touristicAttraction);
 	}
 	
 	//Read: single TouristicAttraction by Id
@@ -51,7 +50,7 @@ public class TouristicAttractionController {
 
 	//Update TouristicAttraction
 	@PutMapping("/touristicAttractions")
-	public void updateCiudad(@RequestBody TouristicAttraction touristicAttraction) {
+	public void updateTouristicAttraction(@RequestBody TouristicAttraction touristicAttraction) {
 		if (touristicAttraction.getId()!=null) {
 			touristicAttractionService.save(touristicAttraction);			
 		} else {
@@ -61,7 +60,7 @@ public class TouristicAttractionController {
 	
 	//Delete Country by id
 	@DeleteMapping("/touristicAttractions/{id}")
-	public String deleteCity(@PathVariable int id) {
+	public String deleteTouristicAttraction(@PathVariable int id) {
 		Optional<TouristicAttraction> theTouristicAttractionService = touristicAttractionService.findById(id);
 		
 		if (theTouristicAttractionService.isPresent()) {

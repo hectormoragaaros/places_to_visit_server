@@ -31,12 +31,15 @@ public class TouristicAttraction {
 	@JsonSerialize(using = GeometrySerializer.class)
 	@JsonDeserialize(using = GeometryDeserializer.class)
 	private Geometry ubicacion;
+	@Column(name="url", nullable = false)
+	private String url;
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "country_id", nullable = false)
 	@JsonBackReference
 	private Country country;
 	
 	public TouristicAttraction(Integer id, String nombre, Geometry ubicacion, Country country) {
+		this.id = id;
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.country = country;
@@ -67,6 +70,14 @@ public class TouristicAttraction {
 
 	public void setUbicacion(Geometry ubicacion) {
 		this.ubicacion = ubicacion;
+	}
+	
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	public Country getCountry() {
