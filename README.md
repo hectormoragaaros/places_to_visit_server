@@ -289,12 +289,11 @@ El otro tema importante es evitar la recursión infinita cuando hay relaciones b
 
 ## Referencias
 
-  1. <a id="ref1" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
-  2. <a id="ref2" href="https://www.baeldung.com/spring-rest-openapi-documentation">Spring REST OpenApi 3.0.</a>
-  3. <a id="ref3" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
-  4. <a id="ref4" href="https://www.iban.com/country-codes">Lista de países y sus códigos ISO3166.</a> 
-  5. <a id="ref5" href="https://developers.google.com/public-data/docs/canonical/countries_csv">Lista de paises y sus coordenadas del centroide.</a>
-  6. <a id="ref6" href="https://stackoverflow.com/questions/45713934/jackson-deserialize-geojson-point-in-spring-boot">Jackson deserialize GeoJson Point in Spring Boot.</a>
-  7. <a id="ref7" href="https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client">How to present resource id to client?</a>
-  8. <a id="ref8" href="https://www.baeldung.com/spring-data-rest-serialize-entity-id">Spring Data Rest – Serializing the Entity ID.</a>
-  
+- [\[1\]] <a id="ref1" href="https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/hateoas-que-es-y-cual-es-su-funcion-en-las-api-rest/">¿Qué es HATEOAS y cuál es su función en las API Rest?</a>
+- [\[2\]] <a id="ref2" href="https://www.baeldung.com/spring-rest-openapi-documentation">Spring REST OpenApi 3.0.</a>
+- [\[3\]] <a id="ref3" href="https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion">Jackson – Bidirectional Relationships.</a>
+- [\[4\]] <a id="ref4" href="https://www.iban.com/country-codes">Lista de países y sus códigos ISO3166.</a> 
+- [\[5\]] <a id="ref5" href="https://developers.google.com/public-data/docs/canonical/countries_csv">Lista de paises y sus coordenadas del centroide.</a>
+- [\[6\]] <a id="ref6" href="https://stackoverflow.com/questions/45713934/jackson-deserialize-geojson-point-in-spring-boot">Jackson deserialize GeoJson Point in Spring Boot.</a>
+- [\[7\]] <a id="ref7" href="https://stackoverflow.com/questions/26114564/how-to-present-resource-id-to-client">How to present resource id to client?</a>
+- [\[8\]] <a id="ref8" href="https://www.baeldung.com/spring-data-rest-serialize-entity-id">Spring Data Rest – Serializing the Entity ID.</a>
